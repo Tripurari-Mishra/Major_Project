@@ -56,6 +56,10 @@ store.on("error",()=>{
     console.log("ERROR IN MONGO SESSION STORE",err);
 });
 
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
+
 const sessionOptions = {
     store,
     secret : process.env.SECRET,
